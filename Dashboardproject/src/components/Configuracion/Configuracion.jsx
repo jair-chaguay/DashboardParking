@@ -22,7 +22,6 @@ const Configuracion = () => {
     <div className="space-y-6">
       <h1 className="text-2xl font-black">Configuración</h1>
 
-      {/* TABS */}
       <div className="flex gap-2 border-b border-slate-200 dark:border-slate-700">
         {tabs.map((tab) => (
           <button
@@ -40,7 +39,6 @@ const Configuracion = () => {
         ))}
       </div>
 
-      {/* CONTENT */}
       {activeTab === "general" && <GeneralSettings />}
       {activeTab === "pricing" && <PricingSettings />}
       {activeTab === "schedule" && <ScheduleSettings />}

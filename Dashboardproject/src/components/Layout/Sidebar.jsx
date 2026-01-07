@@ -28,7 +28,6 @@ const Sidebar = ({ collapsed, currentPage, onPageChange }) => {
         flex flex-col
       `}
     >
-      {/* LOGO */}
       <div className="h-16 px-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800">
         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-lg">
           <Zap className="text-white w-5 h-5" />
@@ -42,7 +41,6 @@ const Sidebar = ({ collapsed, currentPage, onPageChange }) => {
         )}
       </div>
 
-      {/* MENU */}
       <nav className="flex-1 px-3 py-4 space-y-1">
         {menuItems.map((item) => {
           const active = currentPage === item.id;
@@ -73,7 +71,6 @@ const Sidebar = ({ collapsed, currentPage, onPageChange }) => {
         })}
       </nav>
 
-      {/* USER */}
       <div className="p-4 border-t border-slate-200 dark:border-slate-800">
         <div className="flex items-center gap-3">
           <img

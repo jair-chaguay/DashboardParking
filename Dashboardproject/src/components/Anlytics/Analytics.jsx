@@ -61,7 +61,6 @@ const Analytics = () => {
   return (
     <div className="space-y-8">
 
-      {/* HEADER */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-black">Analytics</h1>
@@ -70,7 +69,6 @@ const Analytics = () => {
           </p>
         </div>
 
-        {/* FILTROS */}
         <div className="flex gap-2">
           {["Hoy", "Semana", "Mes"].map((filtro) => (
             <button
@@ -88,7 +86,6 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* KPIs */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {kpis.map((kpi, i) => (
           <div
@@ -130,10 +127,8 @@ const Analytics = () => {
         ))}
       </div>
 
-      {/* GRÁFICAS */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-        {/* INGRESOS */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm">
           <h3 className="font-semibold text-lg mb-4">
             Ingresos en el tiempo
@@ -150,7 +145,6 @@ const Analytics = () => {
           </div>
         </div>
 
-        {/* HORAS PICO */}
         <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm">
           <h3 className="font-semibold text-lg mb-4">
             Horas Pico
@@ -168,7 +162,6 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* COMPARATIVA */}
       <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm">
         <h3 className="font-semibold text-lg mb-4">
           Rendimiento por Parqueadero

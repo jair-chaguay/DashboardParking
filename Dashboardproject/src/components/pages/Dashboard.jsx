@@ -16,10 +16,8 @@ const Dashboard = () => {
   return (
     <div className="flex-1 overflow-y-auto p-6 space-y-6">
 
-      {/* FILA 1 - KPIs */}
       <KPISection />
 
-      {/* FILA 2 */}
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <HeatmapCard />
@@ -29,7 +27,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* FILA 3 */}
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-6">
           <LatencyChart />
@@ -39,7 +36,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* FILA 4 */}
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <PaymentsTable />
