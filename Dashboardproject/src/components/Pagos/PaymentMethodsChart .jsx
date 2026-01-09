@@ -1,28 +1,20 @@
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import usePagos from "../../hooks/usePagos";
 
-const paymentMethodsData = [
-  { method: "Tarjeta", value: 1840 },
-  { method: "Efectivo", value: 920 },
-  { method: "QR", value: 640 },
-  { method: "App", value: 1120 },
-];
+const PaymentMethodsChart = () => {
+  const { paymentMethods, loading } = usePagos();
+  if (loading) return null;
 
-const PaymentMethodsChart = () => (
-  <ResponsiveContainer width="100%" height={260}>
-    <BarChart data={paymentMethodsData}>
-      <XAxis dataKey="method" />
-      <YAxis />
-      <Tooltip />
-      <Bar dataKey="value" radius={[8, 8, 0, 0]} isAnimationActive />
-    </BarChart>
-  </ResponsiveContainer>
-);
+  return (
+    <ResponsiveContainer width="100%" height={260}>
+      <BarChart data={paymentMethods}>
+        <XAxis dataKey="method" />
+        <YAxis />
+        <Tooltip />
+        <Bar dataKey="value" radius={[8, 8, 0, 0]} />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+};
 
 export default PaymentMethodsChart;

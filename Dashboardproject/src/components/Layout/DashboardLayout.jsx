@@ -5,8 +5,6 @@ import Analytics from "../Anlytics/Analytics";
 import Dashboard from "../pages/Dashboard";
 import Usuarios from "../Usuarios/Usuarios";
 import Payments from "../Pagos/Pagos"
-import Support from "../Soporte/Soporte"
-import Settings from "../Configuracion/Configuracion"
 
 const DashboardLayout = ({ children, darkMode, setDarkMode }) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -23,11 +21,6 @@ const DashboardLayout = ({ children, darkMode, setDarkMode }) => {
     case "payments":
       return <Payments />;
 
-    case "support":
-      return <Support />;
-
-    case "settings":
-      return <Settings />;
 
     default:
       return <Dashboard />;

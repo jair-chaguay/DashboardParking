@@ -1,28 +1,24 @@
+import usePagos from "../../hooks/usePagos";
+
 const PaymentsKPIs = () => {
-  const stats = [
-    { label: "Ingresos Hoy", value: "$1,240" },
-    { label: "Ingresos del Mes", value: "$32,540" },
-    { label: "Ticket Promedio", value: "$4.80" },
-    { label: "Pagos Fallidos", value: 18 },
-  ];
+  const { kpis, loading } = usePagos();
+  if (loading) return null;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-      {stats.map((s) => (
-        <div
-          key={s.label}
-          className="
-            bg-white dark:bg-slate-900
-            rounded-2xl p-6 shadow-sm
-            transition hover:shadow-md hover:-translate-y-1
-          "
-        >
-          <p className="text-sm text-slate-500">{s.label}</p>
-          <h2 className="text-3xl font-black mt-2">{s.value}</h2>
-        </div>
-      ))}
+      <KPI label="Ingresos Hoy" value={'$40'} />
+      <KPI label="Ingresos del Mes" value={`$${kpis.totalRevenue.toFixed(2)}`} />
+      <KPI label="Ticket Promedio" value={`$${kpis.avgTicket.toFixed(2)}`} />
+      <KPI label="Pagos Fallidos" value={kpis.failed} />
     </div>
   );
 };
+
+const KPI = ({ label, value }) => (
+  <div className="bg-white dark:bg-slate-900 rounded-2xl p-6">
+    <p className="text-sm text-slate-500">{label}</p>
+    <h2 className="text-3xl font-black mt-2">{value}</h2>
+  </div>
+);
 
 export default PaymentsKPIs;

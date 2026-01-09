@@ -4,7 +4,6 @@ import {
   Users,
   CreditCard,
   MessageSquare,
-  Settings,
   Zap
 } from "lucide-react";
 
@@ -13,8 +12,6 @@ const menuItems = [
   { id: "analytics", icon: BarChart3, label: "Analytics" },
   { id: "users", icon: Users, label: "Usuarios" },
   { id: "payments", icon: CreditCard, label: "Pagos" },
-  { id: "support", icon: MessageSquare, label: "Soporte" },
-  { id: "settings", icon: Settings, label: "Configuración" },
 ];
 
 const Sidebar = ({ collapsed, currentPage, onPageChange }) => {
